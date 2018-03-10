@@ -12,15 +12,18 @@ TARGET = joystickToKeyboard
 TEMPLATE = app
 
 INCLUDEPATH += /usr/include/SDL2/
-
+INCLUDEPATH += /dev/uinput
+INCLUDEPATH +=/home/uinputgroup
 LIBS += -lSDL2
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    joystickcontrols.cpp
+    joystickcontrols.cpp \
+    keyboard.cpp
 
 HEADERS  += mainwindow.h \
-    joystickcontrols.h
+    joystickcontrols.h \
+    keyboard.h
 
 FORMS    += mainwindow.ui
 

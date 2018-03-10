@@ -5,6 +5,7 @@
 #include <QCoreApplication>
 #include <QApplication>
 
+
 #define MAX_CONTROLLERS 4
 SDL_GameController *Joystick[MAX_CONTROLLERS];
 
@@ -23,9 +24,8 @@ void JoystickControls::run()
         SDL_Event event;
         if (SDL_PollEvent(&event)) {
             detectJoystickEvent(controllerIndex);
-            if(Up){
+            if(Up)
                 emit joystickButtonClicked(UP);
-            }
             if(Down)
                 emit joystickButtonClicked(DOWN);
             if(Left)
@@ -33,6 +33,7 @@ void JoystickControls::run()
             if(Right)
                 emit joystickButtonClicked(RIGHT);
         }
+
     }
 }
 

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "joystickcontrols.h"
+#include "keyboard.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +23,7 @@ void onJoystickButtonClicked(int joyastickValue);
 private:
     Ui::MainWindow *ui;
     JoystickControls *m_JoyManager;
+    KeyBoard *m_keyboard;
 
 
 };
