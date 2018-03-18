@@ -18,8 +18,8 @@ public:
     ~MainWindow();
 
 public slots:
-void onJoystickButtonClicked(int joyastickValue);
-void onJoystickButtonReleased(int joyastickValue);
+void onJoystickButtonClicked(int joyastickValue, int controlerIndex);
+void onJoystickButtonReleased(int joyastickValue, int controlerIndex);
 private:
     Ui::MainWindow *ui;
     JoystickControls *m_JoyManager;

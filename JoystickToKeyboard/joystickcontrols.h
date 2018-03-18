@@ -2,6 +2,7 @@
 #define JOYSTICKCONTROLS_H
 
 #include <QThread>
+#include <SDL2/SDL.h>
 
 enum JoystickButton
 {
@@ -24,10 +25,12 @@ public:
 protected:  
     void run() override;
 signals:
-    void joystickButtonClicked(int);
-    void joystickButtonRelease(int);
+    void joystickButtonClicked(int,int);
+    void joystickButtonRelease(int,int);
 private:
     void detectJoystickEvent(int controllerIndex);
+    void sendClickedSignal(int controllerIndex);
+    void sendReleasedSignal(SDL_Event event,int controllerIndex);
     int detectActiveJoystick();
 
     bool m_Up;

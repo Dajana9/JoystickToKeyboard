@@ -15,7 +15,7 @@ public:
 
 private:
     void emitData(int fd, int type, int code, int val);
-
+    void usedKeys();
     int  m_fileData;
 };
 

@@ -48,18 +48,7 @@ void KeyBoard::uinputCreate()
     m_fileData = open("/dev/uinput", O_WRONLY | O_NONBLOCK);
     if(m_fileData < 0)
         qDebug()<<("error: open");
-
-    //define which keys are you gonne use
-    if(ioctl(m_fileData, UI_SET_EVBIT, EV_KEY) < 0)
-        qDebug()<<("error: ioctl EV_KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_LEFT) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_RIGHT) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_SPACE) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_UP) < 0)
-        qDebug()<<("error: ioctl KEY");
+    usedKeys();
 
     memset(&uidev, 0, sizeof(uidev));
     snprintf(uidev.name, UINPUT_MAX_NAME_SIZE, "uinput-sample");
@@ -78,11 +67,36 @@ void KeyBoard::uinputCreate()
     qDebug()<<"READY!";
 }
 
-void KeyBoard::uinputDestroy(){
-
+void KeyBoard::uinputDestroy()
+{
     if(ioctl(m_fileData, UI_DEV_DESTROY) < 0)
         qDebug()<<("error: ioctl");
 
     close(m_fileData);
 }
 
+void KeyBoard::usedKeys()
+{
+    //define which keys are you gonne use
+    if(ioctl(m_fileData, UI_SET_EVBIT, EV_KEY) < 0)
+        qDebug()<<("error: ioctl EV_KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_LEFT) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_RIGHT) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_SPACE) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_UP) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_DOWN) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_P) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_A) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_D) < 0)
+        qDebug()<<("error: ioctl KEY");
+    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_W) < 0)
+        qDebug()<<("error: ioctl KEY");
+
+}
