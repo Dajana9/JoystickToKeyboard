@@ -34,8 +34,6 @@ void KeyBoard::keyPress(int key)
 {
        emitData(m_fileData, EV_KEY, key, 1);
        emitData(m_fileData, EV_SYN, 0, 0);
-       emitData(m_fileData, EV_KEY, key, 0);
-       emitData(m_fileData, EV_SYN, 0, 0);
 }
 void KeyBoard::keyRelease(int key)
 {
@@ -77,7 +75,7 @@ void KeyBoard::uinputCreate()
         qDebug()<<("error: ioctl CREATE");
 
     sleep(1);
-    qDebug()<<"SVE STVORENO";
+    qDebug()<<"READY!";
 }
 
 void KeyBoard::uinputDestroy(){

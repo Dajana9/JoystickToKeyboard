@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_keyboard = new KeyBoard;
     m_keyboard->uinputCreate();
     connect(m_JoyManager,SIGNAL(joystickButtonClicked(int)),this,SLOT(onJoystickButtonClicked(int)));
+    connect(m_JoyManager,SIGNAL(joystickButtonRelease(int)),this,SLOT(onJoystickButtonReleased(int)));
 }
 
 MainWindow::~MainWindow()
@@ -25,7 +26,6 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::onJoystickButtonClicked(int joyastickValue){
-    qDebug()<<joyastickValue;
     switch (joyastickValue) {
     case UP:
         m_keyboard->keyPress(KEY_UP);
@@ -39,11 +39,53 @@ void MainWindow::onJoystickButtonClicked(int joyastickValue){
     case RIGHT:
         m_keyboard->keyPress(KEY_RIGHT);
         break;
+    case A:
+        m_keyboard->keyPress(KEY_UP);
+        break;
+    case B:
+        m_keyboard->keyPress(KEY_SPACE);
+        break;
+    case X:
+        m_keyboard->keyPress(KEY_SPACE);
+        break;
+    case Y:
+        m_keyboard->keyPress(KEY_RIGHT);
+        break;
     default:
-        m_keyboard->keyRelease(KEY_UP);
-        m_keyboard->keyRelease(KEY_DOWN);
-
         break;
     }
 
+}
+
+void MainWindow::onJoystickButtonReleased(int joyastickValue)
+{
+    switch (joyastickValue) {
+    case UP:
+        m_keyboard->keyRelease(KEY_UP);
+        break;
+    case DOWN:
+        m_keyboard->keyRelease(KEY_SPACE);
+        break;
+    case LEFT:
+        m_keyboard->keyRelease(KEY_LEFT);
+        break;
+    case RIGHT:
+        m_keyboard->keyRelease(KEY_RIGHT);
+        break;
+    case A:
+        m_keyboard->keyRelease(KEY_UP);
+        break;
+    case B:
+        m_keyboard->keyRelease(KEY_SPACE);
+        break;
+    case X:
+        m_keyboard->keyRelease(KEY_SPACE);
+        break;
+    case Y:
+        m_keyboard->keyRelease(KEY_RIGHT);
+        break;
+    default:
+
+        break;
+    }
 }

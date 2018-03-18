@@ -24,26 +24,57 @@ void JoystickControls::run()
         SDL_Event event;
         if (SDL_PollEvent(&event)) {
             detectJoystickEvent(controllerIndex);
-            if(Up)
+            if(m_Up)
                 emit joystickButtonClicked(UP);
-            if(Down)
+            if(m_Down)
                 emit joystickButtonClicked(DOWN);
-            if(Left)
+            if(m_Left)
                 emit joystickButtonClicked(LEFT);
-            if(Right)
+            if(m_Right)
                 emit joystickButtonClicked(RIGHT);
+            if(m_A)
+                emit joystickButtonClicked(A);
+            if(m_B)
+                emit joystickButtonClicked(B);
+            if(m_X)
+                emit joystickButtonClicked(X);
+            if(m_Y)
+                emit joystickButtonClicked(Y);
+        }
+        if(event.type == SDL_CONTROLLERBUTTONUP){
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_DPAD_UP)
+            emit joystickButtonRelease(UP);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_DPAD_DOWN)
+            emit joystickButtonRelease(DOWN);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_DPAD_LEFT)
+            emit joystickButtonRelease(LEFT);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_DPAD_RIGHT)
+            emit joystickButtonRelease(RIGHT);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_A)
+            emit joystickButtonRelease(A);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_B)
+            emit joystickButtonRelease(B);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_X)
+            emit joystickButtonRelease(X);
+            if (event.jbutton.button==SDL_CONTROLLER_BUTTON_Y)
+            emit joystickButtonRelease(Y);
+
         }
 
     }
 }
 
-
 void JoystickControls::detectJoystickEvent(int controllerIndex){
 
-    Up = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_UP);
-    Down = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_DOWN);
-    Left = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_LEFT);
-    Right = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
+    m_Up = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_UP);
+    m_Down = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_DOWN);
+    m_Left = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_LEFT);
+    m_Right = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
+    m_A = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_A);
+    m_B = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_B);
+    m_X = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_X);
+    m_Y = SDL_GameControllerGetButton(Joystick[controllerIndex], SDL_CONTROLLER_BUTTON_Y);
+
 }
 
 int JoystickControls::detectActiveJoystick(){

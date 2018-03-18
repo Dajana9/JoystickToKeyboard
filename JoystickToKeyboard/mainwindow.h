@@ -19,7 +19,7 @@ public:
 
 public slots:
 void onJoystickButtonClicked(int joyastickValue);
-
+void onJoystickButtonReleased(int joyastickValue);
 private:
     Ui::MainWindow *ui;
     JoystickControls *m_JoyManager;
