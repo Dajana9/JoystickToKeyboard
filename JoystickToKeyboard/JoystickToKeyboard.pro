@@ -28,3 +28,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 QMAKE_CXXFLAGS += -std=gnu++14
+
+DISTFILES += \
+    keyboardDataBase.txt

@@ -1,24 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>846</width>
+    <height>380</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="OkButton">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>210</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>322</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_16">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>LEFT   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="LeftBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>RIGHT   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="RightBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>UP   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="UpBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>DOWN  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="DownBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>A -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="ABox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>B  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="BBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_14">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>X  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="XBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Y  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="YBox">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>30</y>
+      <width>322</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_17">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>LEFT   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="LeftBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>RIGHT   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="RightBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>UP   -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="UpBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_20">
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>DOWN  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="DownBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <item>
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>A -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="ABox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <item>
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>B  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="BBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_23">
+         <item>
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>X  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="XBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <item>
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Y  -&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="YBox_2">
+           <item>
+            <property name="text">
+             <string>KEY_A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KEY_D</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>OkButton</zorder>
+   <zorder>layoutWidget_2</zorder>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>

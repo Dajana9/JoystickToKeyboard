@@ -77,26 +77,19 @@ void KeyBoard::uinputDestroy()
 
 void KeyBoard::usedKeys()
 {
-    //define which keys are you gonne use
     if(ioctl(m_fileData, UI_SET_EVBIT, EV_KEY) < 0)
-        qDebug()<<("error: ioctl EV_KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_LEFT) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_RIGHT) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_SPACE) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_UP) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_DOWN) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_P) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_A) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_D) < 0)
-        qDebug()<<("error: ioctl KEY");
-    if(ioctl(m_fileData, UI_SET_KEYBIT, KEY_W) < 0)
-        qDebug()<<("error: ioctl KEY");
+            qDebug()<<("error: ioctl EV_KEY");
 
+    QFile file("/home/dajana/git/JoystickToKeyboard/keyboardDataBase.txt");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug()<<"Error, file not ready/open";
+    }
+
+    QTextStream in(&file);
+    while(!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList fields = line.split("=");
+        if(ioctl(m_fileData, UI_SET_KEYBIT, fields.at(1).toInt()) < 0)
+            qDebug()<<("error: ioctl KEY");
+        }
 }
