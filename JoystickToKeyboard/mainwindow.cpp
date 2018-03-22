@@ -153,8 +153,6 @@ void MainWindow::onJoystickButtonReleased(int joyastickValue, int controlerIndex
     }
 }
 
-
-
 void MainWindow::on_OkButton_clicked()
 {
     //First joystick

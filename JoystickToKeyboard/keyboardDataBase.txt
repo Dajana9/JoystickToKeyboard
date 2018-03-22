@@ -1,3 +1,4 @@
+EMPTY=64
 KEY_1=2
 KEY_2=3
 KEY_3=4

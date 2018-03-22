@@ -31,3 +31,6 @@ QMAKE_CXXFLAGS += -std=gnu++14
 
 DISTFILES += \
     keyboardDataBase.txt
+
+RESOURCES += \
+    resource.qrc

@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 
 
-//uvik na pocetku : sudo chmod -R a=wrx /dev/uinput
+//at beginning you must allow using /dev/uinput : sudo chmod -R a=wrx /dev/uinput
 
 int main(int argc, char *argv[])
 {
